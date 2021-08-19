@@ -50,9 +50,8 @@ disableHostCheck: true
 
 ```
 
-### 建议
-+ 在mstatic中开发，请管理好 `publicPath` 
-+ 建议用mstatic自带的scss、img编译，别用webpack！如果用的话，请考虑webpack编译后mstatic进行二次编译可能造成的问题
+### 目标
++ 掘金社区UI加功能 复刻
 
 ### 使用说明
 + 支持单页面、多页面应用混合开发
