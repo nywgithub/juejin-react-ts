@@ -19,7 +19,7 @@ function App () {
         {/* 方法一 */}
         {/* <Route path="/" component={Home} exact></Route> */}
         {/* 方法二 重定向*/}
-        <Redirect path="/" to="/home" />
+        <Redirect path="/" to="/main" />
       </Switch>
   )
 }

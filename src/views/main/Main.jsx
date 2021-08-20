@@ -1,13 +1,13 @@
 import  React,{useEffect,useState} from "react";
 import axios from 'axios';
-function System() {
+import AppCard from '@CP/app-card'
+function Main() {
     const [mockData, setmockData] = useState(); 
     useEffect(() => {
        fetchTest()
     }, []);
 
     var fetchTest = ()=>{
-        // console.log(1)
         axios({
             url:"/postdata1",
             method:"get"
@@ -16,6 +16,11 @@ function System() {
             setmockData(res.data.test)
         })
     }
-    return (<h2>hello {mockData}</h2>)
+    return (
+        <>
+            <h2>hello {mockData}</h2>
+            <AppCard title="此处为标题"/>
+        </>
+    )
 }
-export default System;
+export default Main;

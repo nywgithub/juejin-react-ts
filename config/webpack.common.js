@@ -99,6 +99,7 @@ module.exports = {
             '@': path.resolve(__dirname, '../src'),
             '@CSS': path.resolve(__dirname, '../src/css'),
             '@IMG': path.resolve(__dirname, '../src/imgs'),
+            '@CP': path.resolve(__dirname, '../src/common/components'),
         }
     },
     optimization: {

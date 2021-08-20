@@ -14,7 +14,7 @@ axios.interceptors.request.use(
     return config;
   },
   (err) => {
-    Message.error({message: '请求超时!'});
+    Message.error({message: '请求失败!'});
     return Promise.resolve(err);
   }
 );
