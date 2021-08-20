@@ -1,6 +1,6 @@
 import {
   Login,
-  Main,
+  Home,
 } from '@/views/router'
 
 export type RouterType = {
@@ -17,7 +17,7 @@ const HomeRouter: RouterType = {
 }
 const MainRouter: RouterType = {
   path: '/main',
-  component: Main,
+  component: Home,
   root: [],
 }
 // 总路由

@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './style/index.scss'
 
 export interface InavMenu {
@@ -36,37 +36,39 @@ const NavMenu: React.FC<InavMenu> = (props) => {
   const [isFold, setIsFold] = useState(false)
   const { list, isHead } = props
   const foldClick = () => setIsFold(!isFold)
-  const navList = list.map((item) => {
-    return list.length < 10 || isHead ? (
-      <li className="nav-item">
-        <Link className="item-title" to={item.url}>
-          {item.title}
-        </Link>
-      </li>
-    ) : (
-      !isFold && (
-        <li className="nav-item unfold" onClick={() => foldClick()}>
-          展开
-        </li>
-      )
-    )
-  })
-  const foldNav = list.map((item) => {
-    return (
-      list.length >= 10 && (
+  const navList = list.map((item, index) => {
+    if (index < 10 || isHead) {
+      return (
         <li className="nav-item">
           <Link className="item-title" to={item.url}>
             {item.title}
           </Link>
         </li>
       )
+    } else {
+      return (
+        !isFold && (
+          <li className="nav-item unfold" onClick={() => foldClick()}>
+            展开
+          </li>
+        )
+      )
+    }
+  })
+  const foldNav = list.map((item, index) => {
+    return index >= 10 ? (
+      <li className="nav-item">
+        <Link className="item-title" to={item.url}>
+          {item.title}
+        </Link>
+      </li>
     )
   })
   return (
     <nav className="main-nav">
       <ul className="nav-list">
         {navList}
-        {isFold && { foldNav }}
+        { !isFold && foldNav }
       </ul>
     </nav>
   )

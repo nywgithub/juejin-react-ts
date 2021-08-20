@@ -2,9 +2,9 @@
 import { lazy } from 'react'
 
 const Login = lazy(() => import('./login/login'))
-const Main = lazy(() => import('./main/Main'))
+const Home = lazy(() => import('./home'))
 
 export {
     Login,
-    Main
+    Home
 }
