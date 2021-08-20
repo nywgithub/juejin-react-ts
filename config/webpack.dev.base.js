@@ -12,7 +12,6 @@ module.exports = merge(common, {
     output: {
         path: BUILD_DIR,
         publicPath: "dist/",
-        //publicPath: "/",
         filename: 'js/[name].js',
         chunkFilename: 'js/[name].js'
     },
