@@ -39,35 +39,33 @@ const NavMenu: React.FC<InavMenu> = (props) => {
   const navList = list.map((item, index) => {
     if (index < 10 || isHead) {
       return (
-        <li className="nav-item">
+        <li className="nav-item" key={index}>
           <Link className="item-title" to={item.url}>
             {item.title}
           </Link>
         </li>
       )
+    }else if(index === 10){
+        return(
+            <li className="nav-item unfold" onClick={() => foldClick()}  key={10}>
+            展开
+            </li>
+        )
+    }else{
+        return(
+            isFold && (<li className="nav-item"  key={index}>
+            <Link className="item-title" to={item.url}>
+                {item.title}
+            </Link>
+            </li>)
+        )
     }
   })
-  const foldNav = list.map((item, index) => {
-    return (
-      index >= 10 && (
-        <li className="nav-item">
-          <Link className="item-title" to={item.url}>
-            {item.title}
-          </Link>
-        </li>
-      )
-    )
-  })
+  
   return (
     <nav className="main-nav">
       <ul className="nav-list">
         {navList}
-        {!isFold && (
-          <li className="nav-item unfold" onClick={() => foldClick()}>
-            展开
-          </li>
-        )}
-        {!isFold && { foldNav }}
       </ul>
     </nav>
   )
