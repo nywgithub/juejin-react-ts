@@ -45,30 +45,29 @@ const NavMenu: React.FC<InavMenu> = (props) => {
           </Link>
         </li>
       )
-    } else {
-      return (
-        !isFold && (
-          <li className="nav-item unfold" onClick={() => foldClick()}>
-            展开
-          </li>
-        )
-      )
     }
   })
   const foldNav = list.map((item, index) => {
-    return index >= 10 ? (
-      <li className="nav-item">
-        <Link className="item-title" to={item.url}>
-          {item.title}
-        </Link>
-      </li>
+    return (
+      index >= 10 && (
+        <li className="nav-item">
+          <Link className="item-title" to={item.url}>
+            {item.title}
+          </Link>
+        </li>
+      )
     )
   })
   return (
     <nav className="main-nav">
       <ul className="nav-list">
         {navList}
-        { !isFold && foldNav }
+        {!isFold && (
+          <li className="nav-item unfold" onClick={() => foldClick()}>
+            展开
+          </li>
+        )}
+        {!isFold && { foldNav }}
       </ul>
     </nav>
   )
