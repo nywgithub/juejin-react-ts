@@ -13,7 +13,7 @@ export interface InavMenu {
 /* 
     TODO: 
     1.使用自定义hook复用map的逻辑
-    2.展开绑定点击事件(点击后将大于10之后的标签插入最后)
+    2.展开绑定点击事件(点击后将大于10之后的标签插入最后) √
     3.2添加动画过渡
     4.重复部分组件化
     5.样式
@@ -21,17 +21,20 @@ export interface InavMenu {
 
 //一级导航
 const TopNav: React.FC<InavMenu> = (props) => {
-  const [isHover, setIsHover] = useState<number>(0)
+  const [isHover, setIsHover] = useState<number>()
   const { list, children } = props
   const navMouseHover = (index) => {
     setIsHover(index)
   }
+  const navMouseOut = () => setIsHover(100)
+
   const navList = list.map((item, index) => {
     return (
       <Link className="nav-item" to={item.url} key={index}>
         <div
           className="item-title nav-popBox"
           onMouseOver={() => navMouseHover(index)}
+          onMouseOut={() => navMouseOut()}
         >
           {item.title}
           {isHover === index && children}
