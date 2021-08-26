@@ -1,69 +1,86 @@
 import React, { useState } from 'react'
 import { NavMenu, TopNav } from '@CP/nav'
 
-const LIST = [
+const TOPLIST = [
   {
     title: '首页',
     url: '/home',
   },
   {
-    title: '登录',
+    title: '前端',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '后端',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: 'Android',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: 'IOS',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '人工智能',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '代码人生',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '阅读',
+    url: '/Login',
+  },
+]
+const NAVLIST = [
+  {
+    title: '首页',
+    url: '/home',
+  },
+  {
+    title: '前端',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '后端',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: 'Android',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: 'IOS',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '人工智能',
     url: '/Login',
   },
   {
-    title: '登录',
+    title: '代码人生',
+    url: '/Login',
+  },
+  {
+    title: '阅读',
     url: '/Login',
   },
 ]
 function Top() {
-  const [navData, setNavData] = useState(LIST)
+  //TODO :
+  //1.navData后续改为接口获取
+  const [topData, setTopData] = useState(TOPLIST)
+  const [navData, setNavData] = useState(NAVLIST)
 
   return (
     <>
-      <NavMenu list={navData} isHead={false} />
-      <TopNav list={navData}>
+      <TopNav list={topData}>
          <NavMenu list={navData} isHead={false} />
       </TopNav>
+      <NavMenu list={navData} isHead={false} />
     </>
   )
 }
