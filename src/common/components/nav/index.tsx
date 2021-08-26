@@ -8,7 +8,6 @@ export interface InavMenu {
     url: string
   }[]
   isHead?: boolean
-  children: string
 }
 
 /* 
@@ -22,7 +21,7 @@ export interface InavMenu {
 
 //一级导航
 const TopNav: React.FC<InavMenu> = (props) => {
-  const [isHover, setIsHover] = useState(0)
+  const [isHover, setIsHover] = useState<number>(0)
   const { list, children } = props
   const navMouseHover = (index) => {
     setIsHover(index)
@@ -45,7 +44,7 @@ const TopNav: React.FC<InavMenu> = (props) => {
 
 //二级导航 + 顶部导航
 const NavMenu: React.FC<InavMenu> = (props) => {
-  const [isFold, setIsFold] = useState(false)
+  const [isFold, setIsFold] = useState<boolean>(false)
   const { list, isHead } = props
   const foldClick = () => setIsFold(!isFold)
   const navList = list.map((item, index) => {
