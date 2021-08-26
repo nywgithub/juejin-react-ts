@@ -1,0 +1,14 @@
+@import '~antd/dist/antd.css';
+.nav-list{
+
+    display: flex;
+    .main-nav{
+        position:fixed;
+        .nav-list{
+            flex-direction: column;
+        }
+    }
+    .nav-item {
+        padding: 0 1rem;
+    }
+}
