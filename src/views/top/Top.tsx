@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavMenu } from '@CP/nav'
+import { NavMenu, TopNav } from '@CP/nav'
 
 const LIST = [
   {
@@ -58,6 +58,13 @@ const LIST = [
 function Top() {
   const [navData, setNavData] = useState(LIST)
 
-  return <NavMenu list={navData} isHead={false} />
+  return (
+    <>
+      <NavMenu list={navData} isHead={false} />
+      <TopNav list={navData}>
+         <NavMenu list={navData} isHead={false} />
+      </TopNav>
+    </>
+  )
 }
 export default Top
