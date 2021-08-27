@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavMenu, TopNav } from '@CP/nav'
+import { NavMenu, TopNav, TFC } from '@CP/nav'
 import axios from 'axios'
 
 const TOPLIST = [
@@ -43,9 +43,9 @@ function Top() {
   const [navData, setNavData] = useState([])
   const [popData, setPopData] = useState([])
   useEffect(() => {
-    getClickList(1)
+    getClickList()
   }, [])
-  var getClickList = (title) => {
+  var getClickList: TFC = (title?: string, e?: any) => {
     axios({
       url: '/getinfo',
       method: 'get',
@@ -53,7 +53,7 @@ function Top() {
       setNavData(res.data.list)
     })
   }
-  var getHoverList = (title) => {
+  var getHoverList: TFC = (title) => {
     axios({
       url: '/getinfo',
       method: 'get',
@@ -61,14 +61,17 @@ function Top() {
       setPopData(res.data.list)
     })
   }
+
   return (
     <>
       <TopNav
         list={TOPLIST}
-        getClickList={(title) => {
-          getClickList(title)
+        getClickList={(title, e) => {
+          getClickList(title, e)
         }}
-        getHoverList={(title)=>{getHoverList(title)}}
+        getHoverList={(title) => {
+          getHoverList(title)
+        }}
       >
         <NavMenu list={popData} isHead />
       </TopNav>

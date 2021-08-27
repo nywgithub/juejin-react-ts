@@ -9,17 +9,17 @@ export interface InavMenu {
   }[]
   isHead?: boolean
 }
-
+export type TFC = (title?: string,event?:any) => void
 export interface ItopMenu extends InavMenu {
-  getClickList: (title: string) => void
-  getHoverList: (title: string) => void
+  getClickList: TFC
+  getHoverList: TFC
 }
 
 /* 
     TODO: 
     1.使用自定义hook复用map的逻辑
     2.展开绑定点击事件(点击后将大于10之后的标签插入最后) √
-    3.2添加动画过渡
+    3.添加动画过渡
     4.样式
 */
 
@@ -30,8 +30,8 @@ const TopNav: React.FC<ItopMenu> = (props) => {
   const [isHover, setIsHover] = useState<number>(100)
 
   const navMouseHover = (index) => setIsHover(index)
-  const navMouseOut = () => setIsHover(100)
-  const getClick = (title) => getClickList(title)
+  const navMouseOut = () => setIsHover(100)//TODO: 换一种方式
+  const getClick = (title,e) => getClickList(title,e)
   const getHover = (title) => getHoverList(title)
 
   const navList = list.map((item, index) => {
@@ -44,7 +44,7 @@ const TopNav: React.FC<ItopMenu> = (props) => {
           navMouseHover(index)
           getHover(item.title)
         }}
-        onClick={() => getClick(item.title)}
+        onClick={(e) => getClick(item.title,e)}
         onMouseOut={() => navMouseOut()}
       >
         <div className="item-title nav-popBox">
