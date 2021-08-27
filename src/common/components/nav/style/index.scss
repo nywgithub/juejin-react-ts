@@ -1,14 +1,66 @@
 @import '~antd/dist/antd.css';
-.nav-list{
+
+.nav-list {
 
     display: flex;
-    .main-nav{
-        position:fixed;
-        .nav-list{
+
+    .main-nav {
+        position: fixed;
+
+        .nav-list {
             flex-direction: column;
         }
     }
+
     .nav-item {
         padding: 0 1rem;
     }
+}
+
+.nav-top {
+    >.nav-item {
+        // &:hover {
+        //     .main-nav {
+        //         display: block;
+        //     }
+        // }
+
+        .main-nav {
+            // display: none;
+            position: fixed;
+            top: 3.75rem;
+            left: 2rem;
+            padding: 1.17rem 1.17rem .17rem;
+            width: 30rem;
+            max-height: 16.67rem;
+            font-weight: 400;
+            line-height: 1.2;
+            background-color: #fff;
+            border: 1px solid #ebebeb;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .15);
+            box-sizing: border-box;
+            border-radius: 2px;
+            cursor: default;
+            z-index: 250;
+
+            .nav-list {
+                display: flex;
+                flex-wrap: wrap;
+                .nav-item{
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    height:2rem;
+                    background-color:#f4f5f5;
+                    border-radius:1rem;
+                    font-size:1.1rem;
+                    color:#71777d;
+                    padding:0 .83rem;
+                    margin-right:1rem;
+                    margin-bottom:1rem
+                }
+            }
+        }
+    }
+
 }

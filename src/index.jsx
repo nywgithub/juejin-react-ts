@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from '@/views/App'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 //挂载 Mock
-import './mock/index.js'
+import './mock'
 import './css'
 ReactDOM.render(
   <HashRouter>
