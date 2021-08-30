@@ -11,13 +11,21 @@ a {
     text-decoration: none;
     color: #222;
 }
-.ant-layout-sider ,
-.ant-layout-header{
-    background:#ffffff
+
+body {
+    font-size:12px;
 }
-.ant-layout-header{
+
+.ant-layout-sider,
+.ant-layout-header {
+    background: #ffffff
+}
+
+.ant-layout-header {
     height: 146px;
 }
-#root, .ant-layout{
+
+#root,
+.ant-layout {
     height: 100%;
 }

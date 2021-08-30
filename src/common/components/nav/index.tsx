@@ -27,10 +27,10 @@ export interface ItopMenu extends InavMenu {
 const TopNav: React.FC<ItopMenu> = (props) => {
   const { list, children, getClickList, getHoverList } = props
 
-  const [isHover, setIsHover] = useState<number>(100)
+  const [isHover, setIsHover] = useState<number>()
 
   const navMouseHover = (index) => setIsHover(index)
-  const navMouseOut = () => setIsHover(100)//TODO: 换一种方式
+  const navMouseOut = () => setIsHover(-1)//TODO: 换一种方式
   const getClick = (title,e) => getClickList(title,e)
   const getHover = (title) => getHoverList(title)
 
