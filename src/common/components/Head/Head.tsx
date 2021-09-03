@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import {NavMenu} from '@CP/nav'
-const DATA =  [
+import { NavMenu } from '@CP/nav'
+import Search from './search'
+const DATA = [
   {
     title: '首页',
     url: '/home',
@@ -42,6 +43,7 @@ const Head = () => {
         <img src="" />
       </a>
       <NavMenu list={DATA} isHead />
+      <Search />
     </div>
   )
 }
