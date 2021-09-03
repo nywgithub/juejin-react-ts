@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { NavMenu } from '@CP/nav'
 import Search from './search'
+import Select from './select'
 const DATA = [
   {
     title: '首页',
@@ -44,6 +46,14 @@ const Head = () => {
       </a>
       <NavMenu list={DATA} isHead />
       <Search />
+      <Link to="/creator" className="creator-link">
+        <button
+          className="ui-btn creator-btn secondary medium default"
+        >
+          创作者中心
+        </button>
+      </Link>
+      <Select />
     </div>
   )
 }

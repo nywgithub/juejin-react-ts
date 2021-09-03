@@ -5,10 +5,11 @@ interface ISearch {}
 1. redux实现搜索框内容传递
 2. onfocus input拉伸 √
 */
+type snArray = (string | number )[] 
 const Search: React.FC<ISearch> = (props) => {
-  var [inputVal, setInputVal] = useState([])
+  var [inputVal, setInputVal] = useState<snArray>([])
   var [isFocus, setIsFocus] = useState(false)
-  const inputEl = useRef(null)
+  const inputEl = useRef<any>(null)
   //清空搜索历史
   const clearSearch = () => {
     setInputVal([])
@@ -37,7 +38,7 @@ const Search: React.FC<ISearch> = (props) => {
         onBlur={() => inputFocus(false)}
       />
       <img
-        src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/8f68a2223e9650f14d6e6781cdcd717a.svg"
+        src=""
         alt="搜索"
         className="search-icon"
         onClick={searchClick}
