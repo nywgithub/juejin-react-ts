@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { NavMenu } from '@CP/nav'
 import Search from './search'
 import Select from './select'
+import Avator from './avator'
+import Notice from './notice'
 const DATA = [
   {
     title: '首页',
@@ -54,6 +56,8 @@ const Head = () => {
         </button>
       </Link>
       <Select />
+      <Avator />
+      <Notice />
     </div>
   )
 }

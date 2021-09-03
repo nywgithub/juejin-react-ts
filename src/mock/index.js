@@ -23,5 +23,6 @@ export const getinfo =  Mock.mock(RegExp('/getinfo?' + ".*"), "get", {
         // 属性 userId 是一个5位的随机码
         'url': '@string("lower",5)',
     }],
-    name:'@cname' //随机中文名
+    name:'@cname', //随机中文名
+    url: '@string("lower",15)'
 });
