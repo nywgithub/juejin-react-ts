@@ -15,16 +15,16 @@ const Search: React.FC<ISearch> = (props) => {
     setInputVal([])
   }
   //点击搜索按钮 =》》 1.传递数据 2.保存搜索记录
-  const searchClick = () => {
+  const searchClick = (e) => {
     //保存搜记录
-    setInputVal([...inputVal, inputEl.current.value])
+    e.keyCode === 13 && setInputVal([...inputVal, inputEl.current.value])
     //向redux传递数据
   }
   //input聚焦事件
   const inputFocus = (bl: boolean) => {
     setIsFocus(bl)
   }
-  const HisList = inputVal.map((item) => {
+  const HisList = inputVal.map(item => {
     return <div className="list-item">item</div>
   })
   return (
@@ -36,6 +36,7 @@ const Search: React.FC<ISearch> = (props) => {
         ref={inputEl}
         onFocus={() => inputFocus(true)}
         onBlur={() => inputFocus(false)}
+        onKeyDown={searchClick}
       />
       <img
         src=""
