@@ -3,19 +3,23 @@ import axios from 'axios'
 import AppCard from '@CP/app-card'
 
 function Home() {
-  
   const [mockData, setmockData] = useState()
   useEffect(() => {
     fetchTest()
   }, [])
 
-  var fetchTest = () => {
+  //测试mock
+  const fetchTest = () => {
     axios({
       url: '/postdata1',
       method: 'get',
     }).then((res) => {
       setmockData(res.data.test)
     })
+  }
+  //获取搜索框数据
+  const getSearch = () => {
+    
   }
   return (
     <>

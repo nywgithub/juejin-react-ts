@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavMenu, TopNav, TFC } from '@CP/nav'
 import axios from 'axios'
-
+import './style/index.scss'
 const TOPLIST = [
   {
     title: '首页',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-
+import store from '@/redux/store'
 interface ISearch {}
 /* TODO: 
 1. redux实现搜索框内容传递
