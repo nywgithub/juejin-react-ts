@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavMenu, TopNav, TFC } from '@CP/nav'
+import { NavMenu, TopNav, TFC } from '@/common/components/nav'
 import axios from 'axios'
 import './style/index.scss'
 const TOPLIST = [

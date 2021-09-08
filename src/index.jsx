@@ -2,6 +2,8 @@ import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 import App from '@/views/App'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import store from '@/redux/store'
 //挂载 Mock
 import './mock'
 import './css'
@@ -13,7 +15,7 @@ ReactDOM.render(
         <Route
           path="/"
           render={(routerProps) => {
-            return <App {...routerProps} />
+            return <Provider store={store}><App {...routerProps} /></Provider>
           }}
         />
       </Switch>

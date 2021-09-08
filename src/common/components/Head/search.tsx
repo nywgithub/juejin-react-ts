@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
-import store from '@/redux/store'
-interface ISearch {}
+import { connect } from 'react-redux'
+import { addSearch } from "@/redux/actions"
+
 /* TODO: 
 1. redux实现搜索框内容传递
 2. onfocus input拉伸 √
 */
 type snArray = (string | number )[] 
-const Search: React.FC<ISearch> = (props) => {
+const Search= ({dispatch}) => {
   var [inputVal, setInputVal] = useState<snArray>([])
   var [isFocus, setIsFocus] = useState(false)
   const inputEl = useRef<any>(null)
@@ -15,17 +16,22 @@ const Search: React.FC<ISearch> = (props) => {
     setInputVal([])
   }
   //点击搜索按钮 =》》 1.传递数据 2.保存搜索记录
-  const searchClick = (e) => {
+  const searchClick = (type,e) => {
     //保存搜记录
-    e.keyCode === 13 && setInputVal([...inputVal, inputEl.current.value])
+    const save = () => {
+      setInputVal([...inputVal, inputEl.current.value])
+      dispatch(addSearch(inputEl.current.value))
+    }
+    type ==="click" && save()
+    type ==="enter" && e.keyCode === 13 && save()
     //向redux传递数据
   }
   //input聚焦事件
   const inputFocus = (bl: boolean) => {
     setIsFocus(bl)
   }
-  const HisList = inputVal.map(item => {
-    return <div className="list-item">item</div>
+  const HisList = inputVal.map((item,index) => {
+    return <div className="list-item" key={index}>{item}</div>
   })
   return (
     <form className={`search-form ${isFocus ? 'active' : ''}`}>
@@ -36,13 +42,13 @@ const Search: React.FC<ISearch> = (props) => {
         ref={inputEl}
         onFocus={() => inputFocus(true)}
         onBlur={() => inputFocus(false)}
-        onKeyDown={searchClick}
+        onKeyDown={(e)=>searchClick("enter",e)}
       />
       <img
         src=""
         alt="搜索"
         className="search-icon"
-        onClick={searchClick}
+        onClick={(e)=>searchClick("click",e)}
       />
       <div className="typehead">
         <div className="title">
@@ -59,4 +65,4 @@ const Search: React.FC<ISearch> = (props) => {
   )
 }
 
-export default Search
+export default connect()(Search)
