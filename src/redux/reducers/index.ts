@@ -1,11 +1,7 @@
 import { combineReducers } from 'redux'
-import { SEARCH_VALUE } from '../actions'
+import searchVal from './searchVal'
 
-function handleValue(state = SEARCH_VALUE, action) {
-  return state
-}
-
-const getSearch =  combineReducers({
-  handleValue,
+const rootReducer =  combineReducers({
+  searchVal,
 })
-export default getSearch
+export default rootReducer

@@ -5,6 +5,7 @@ import { addSearch } from "@/redux/actions"
 /* TODO: 
 1. redux实现搜索框内容传递
 2. onfocus input拉伸 √
+3. 执行渲染list页面的渲染方法
 */
 type snArray = (string | number )[] 
 const Search= ({dispatch}) => {
@@ -21,6 +22,7 @@ const Search= ({dispatch}) => {
     const save = () => {
       setInputVal([...inputVal, inputEl.current.value])
       dispatch(addSearch(inputEl.current.value))
+      inputEl.current.value = ""
     }
     type ==="click" && save()
     type ==="enter" && e.keyCode === 13 && save()
