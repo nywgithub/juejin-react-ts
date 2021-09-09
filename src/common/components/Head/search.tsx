@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { addSearch } from "@/redux/actions"
 
 /* TODO: 
-1. redux实现搜索框内容传递
+1. redux实现搜索框内容传递 √
 2. onfocus input拉伸 √
-3. 执行渲染list页面的渲染方法
+3. 执行渲染list页面的渲染方法 √
 */
 type snArray = (string | number )[] 
 const Search= ({dispatch}) => {

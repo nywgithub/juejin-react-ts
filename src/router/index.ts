@@ -1,6 +1,7 @@
 import {
   Login,
   Home,
+  Content,
 } from '@/views/router'
 
 export type RouterType = {
@@ -10,20 +11,26 @@ export type RouterType = {
   notExect?: boolean,
 }
 
-const HomeRouter: RouterType = {
+const LoginRouter: RouterType = {
   path: '/Login',
   component: Login,
   root: [],
 }
-const MainRouter: RouterType = {
+const HomeRouter: RouterType = {
   path: '/main',
   component: Home,
   root: [],
 }
+const ContentRouter: RouterType = {
+  path: '/content',
+  component: Content,
+  root: [],
+}
 // 总路由
 const Routers: RouterType[] = ([
+  LoginRouter,
   HomeRouter,
-  MainRouter,
+  ContentRouter
 ])
 
 export {

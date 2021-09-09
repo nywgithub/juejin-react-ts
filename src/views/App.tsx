@@ -3,7 +3,6 @@ import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import { Routers } from '@/router'
 import { Layout } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
-import Top from '@/common/components/Top/Top'
 import  Head  from '@/common/components/Head/Head'
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Layout>
         <Header>
           <Head/>
-          <Top />
         </Header>
         <Layout>
           <Content>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import {RouteComponentProps} from 'react-router-dom'
 import './style/index.scss'
 
-interface Iitem {
+interface Iitem extends RouteComponentProps{
   author: string
   cTime: number
   tag: Array<string>
@@ -9,15 +10,30 @@ interface Iitem {
   abstract: string
   view: number
   like: number
-  comment: number,
-  imgUrl?: string,
+  comment: number
+  imgUrl?: string
 }
 
 const Jitem: React.FC<Iitem> = (props) => {
-    
-  const { author, cTime, tag, title, abstract, view, like, comment,imgUrl } = props
+  const clickEvent = () => {
+    props.history.push({
+      pathname: '/content',
+      query: { id: '1' },
+    })
+  }
+  const {
+    author,
+    cTime,
+    tag,
+    title,
+    abstract,
+    view,
+    like,
+    comment,
+    imgUrl,
+  } = props
   return (
-    <li className="item">
+    <li className="item" onClick={()=>clickEvent()}>
       <div className="entry-box">
         <div className="entry">
           <div className="entry-link">
@@ -81,9 +97,7 @@ const Jitem: React.FC<Iitem> = (props) => {
                       title={title}
                       className="title"
                     >
-                      <span className="text-highlight">
-                        {title}
-                      </span>
+                      <span className="text-highlight">{title}</span>
                     </a>
                   </div>
                   <div className="abstract">
@@ -117,7 +131,7 @@ const Jitem: React.FC<Iitem> = (props) => {
     </li>
   )
 }
-Jitem.defaultProps={
-
+Jitem.defaultProps = {
+  
 }
 export default Jitem
