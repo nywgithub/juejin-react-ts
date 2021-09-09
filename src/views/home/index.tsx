@@ -1,35 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { connect } from 'react-redux'
-
-const Home = ({value})=> {
-  const [mockData, setmockData] = useState()
-  useEffect(() => {
-    console.log(value)
-    fetchTest()
-  }, [])
-
-  //测试mock
-  const fetchTest = () => {
-    axios({
-      url: '/postdata1?value=' + value.value,
-      method: 'get',
-    }).then((res) => {
-      setmockData(res.data.test)
-    })
-  }
+import React from 'react'
+import Clist from "@/redux/containers/Clist"
+const Home = ()=> {
   return (
     <>
-      <h2>hello {mockData}</h2>
-      
+      <h2>WELCOME</h2>
+      <Clist />
     </>
   )
 }
 
-const mapStateToProps = state => ({
-  value: state.searchVal
-})
-
-export default connect(
-  mapStateToProps
-)(Home)
+export default Home

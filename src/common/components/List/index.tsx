@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './style/index.scss'
 
-interface IList {
+interface Iitem {
   author: string
   cTime: number
   tag: Array<string>
@@ -13,7 +13,7 @@ interface IList {
   imgUrl?: string,
 }
 
-const Jlist: React.FC<IList> = (props) => {
+const Jitem: React.FC<Iitem> = (props) => {
     
   const { author, cTime, tag, title, abstract, view, like, comment,imgUrl } = props
   return (
@@ -117,7 +117,7 @@ const Jlist: React.FC<IList> = (props) => {
     </li>
   )
 }
-Jlist.defaultProps={
+Jitem.defaultProps={
 
 }
-export default Jlist
+export default Jitem
