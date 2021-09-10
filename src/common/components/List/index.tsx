@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {RouteComponentProps} from 'react-router-dom'
 import './style/index.scss'
 
-interface Iitem extends RouteComponentProps{
+interface Iitem {
   author: string
   cTime: number
   tag: Array<string>

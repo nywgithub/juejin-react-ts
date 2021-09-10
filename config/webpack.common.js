@@ -97,6 +97,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.less', '.json'],
         alias: {
             '@': path.resolve(__dirname, '../src'),
+            //以下与tsconfig共用会提示报错
             '@CSS': path.resolve(__dirname, '../src/css'),
             '@IMG': path.resolve(__dirname, '../src/imgs'),
             '@CP': path.resolve(__dirname, '../src/common/components'),
