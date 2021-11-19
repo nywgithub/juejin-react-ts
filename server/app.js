@@ -13,6 +13,7 @@ const app = new koa()
 app.use(bodyParser())
 
 //初始化路由中间件
+console.log('routers', routers)
 app.use(routers.routes())
    .use(routers.allowedMethods())
 

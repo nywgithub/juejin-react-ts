@@ -2,7 +2,6 @@
 var router = require("koa-router")()
 
 const list = require('./list')
-
 //多个子路由使用use
 router.use('/', list.routes(), list.allowedMethods())
 
