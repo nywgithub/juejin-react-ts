@@ -6,7 +6,7 @@
 + react-router
 + react-redux
 + axios
-+ ...
++ koa2
 
 ### 命令
 ```bash
