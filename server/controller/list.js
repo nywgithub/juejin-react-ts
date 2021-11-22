@@ -1,6 +1,6 @@
 module.exports = {
-    async getlist (ctx){
-        console.log('ctx', ctx)
+    async getList (ctx){
+        console.log('ctx-get', ctx)
         /* 
             从带参数请求中获取参数
         */
@@ -18,5 +18,15 @@ module.exports = {
         console.log(params)
 
         ctx.body = "hey" 
+    },
+    async addList (ctx){
+        console.log('ctx-add' , ctx)
+        /* 
+            获取post请求体参数(非json形式)
+        */
+        //从reques原生获取
+        var postBody = ctx.request.body
+        ctx.body = ctx.request.body
+        console.log(postBody)
     },
 }
