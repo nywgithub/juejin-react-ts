@@ -16,10 +16,10 @@ interface Iitem {
 
 const Jitem: React.FC<Iitem> = (props) => {
   const clickEvent = () => {
-    props.history.push({
-      pathname: '/content',
-      query: { id: '1' },
-    })
+    // props.history.push(
+    //   pathname: '/content',
+    //   query: { id: '1' },
+    // })
   }
   const {
     author,
