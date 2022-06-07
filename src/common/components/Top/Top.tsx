@@ -45,20 +45,25 @@ function Top() {
   useEffect(() => {
     getClickList()
   }, [])
-  var getClickList: TFC = (title?: string, e?: any) => {
-    axios({
+  const getInfo = async () =>{
+    let res = await axios({
       url: '/getinfo',
       method: 'get',
-    }).then((res) => {
-      setNavData(res.data.list)
+    })
+    if(res.data.success){
+      return res.data
+    }
+    
+  }
+  
+  var getClickList: TFC = (title?: string, e?: any) => {
+    getInfo().then((res) => {
+      setNavData(res.list)
     })
   }
   var getHoverList: TFC = (title) => {
-    axios({
-      url: '/getinfo',
-      method: 'get',
-    }).then((res) => {
-      setPopData(res.data.list)
+    getInfo().then((res) => {
+      setPopData(res.list)
     })
   }
 
