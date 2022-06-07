@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { NavMenu, TopNav, TFC } from '@/common/components/nav'
-import axios from 'axios'
+import {getList} from  '@/axios/Top'
 import './style/index.scss'
 const TOPLIST = [
   {
@@ -46,10 +46,7 @@ function Top() {
     getClickList()
   }, [])
   const getInfo = async () =>{
-    let res = await axios({
-      url: '/getinfo',
-      method: 'get',
-    })
+    let res = await getList()
     if(res.data.success){
       return res.data
     }
