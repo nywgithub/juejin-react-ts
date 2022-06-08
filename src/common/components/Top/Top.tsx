@@ -40,6 +40,7 @@ const TOPLIST = [
 function Top() {
   const [navData, setNavData] = useState([])
   const [popData, setPopData] = useState([])
+  var test2 = 5
   useEffect(() => {
     getClickList()
   }, [])
