@@ -38,6 +38,7 @@ const TOPLIST = [
 ]
 
 function Top() {
+  var test = 1
   const [navData, setNavData] = useState([])
   const [popData, setPopData] = useState([])
   useEffect(() => {
