@@ -38,8 +38,6 @@ const TOPLIST = [
 ]
 
 function Top() {
-  //TODO :
-  //1.navData后续改为接口获取
   const [navData, setNavData] = useState([])
   const [popData, setPopData] = useState([])
   useEffect(() => {
