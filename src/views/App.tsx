@@ -4,6 +4,7 @@ import { Routers } from '@/router'
 import { Layout } from 'antd'
 const { Header, Footer, Sider, Content } = Layout
 import  Head  from '@/common/components/Head/Head'
+const test = 1
 function App() {
   return (
     <>
