@@ -7,7 +7,7 @@
     "i": "npm --registry https://registry.npm.taobao.org install",
     "watch": "webpack --watch --config ./config/webpack.dev.js",
     "dev": "webpack-dev-server --open --config ./config/webpack.common.js ",
-    "local": "webpack-dev-server --config ./config/webpack.dev.js ",
+    "static": "webpack-dev-server --config ./config/webpack.dev.js ",
     "mock": "webpack-dev-server --config ./config/webpack.mock.js ",
     "build": "webpack --config ./config/webpack.prod.js",
     "start server": "node ./server/app.js",

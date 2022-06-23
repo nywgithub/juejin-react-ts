@@ -38,6 +38,7 @@ function App() {
               {/* <Redirect path="/" to="/main" />
               </Switch> */}
               {renderRoutes(routes, authed, authPath)}
+              <Redirect path="/" to="/main" />
             </main>
           </Content>
           <Sider>Sider</Sider>

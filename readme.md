@@ -12,7 +12,7 @@
 ```bash
 npm run i        //安装依赖
 npm run dev      //开发模式(前后端分离)
-npm run local    //开发模式(前后端不分离)
+npm run static    //开发模式(前后端不分离)
 npm run mock     //开发模式(mock接口平台)  //开发中
 npm run build    //打包发布
 ```
