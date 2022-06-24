@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+
 * {
     margin: 0;
     padding: 0
@@ -14,7 +15,7 @@ a {
 }
 
 body {
-    font-size:12px;
+    font-size: 12px;
 }
 
 .ant-layout-sider,
@@ -30,6 +31,7 @@ body {
 .ant-layout {
     height: 100%;
 }
-.container{
+
+.container {
     display: flex;
 }

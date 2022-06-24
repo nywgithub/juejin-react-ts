@@ -103,9 +103,5 @@ typings/
 # Ignore all local history of files
 .history
 
-dist/
-dist/
-dist/*
-dist/*
-
+package-lock.json
 # End of https://www.gitignore.io/api/node,visualstudiocode
