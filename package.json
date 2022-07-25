@@ -10,8 +10,7 @@
     "static": "webpack-dev-server --config ./config/webpack.dev.js ",
     "mock": "webpack-dev-server --config ./config/webpack.mock.js ",
     "build": "webpack --config ./config/webpack.prod.js",
-    "start server": "node ./server/app.js",
-    "start": "npm run start server & npm run dev"
+    "start:server": "node ./server/app.js"
   },
   "author": "mic-ued",
   "license": "ISC",

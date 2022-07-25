@@ -17,8 +17,8 @@ function App() {
         </Header>
         <Layout>
           <Content>
-            <Link to="/test">1</Link>
-            <Link to="/test/son">2</Link>
+            {/* <Link to="/test">1</Link>
+            <Link to="/test/son">2</Link> */}
             <main>
               {/* <Switch>标签会渲染将匹配URL的第一个<Route>进行渲染，如果最前面的<Route>匹配了，
               后面的就不会渲染，所以对于path="/"的<Route>应该放在最后面，<Switch>相当于js里的switch */}
